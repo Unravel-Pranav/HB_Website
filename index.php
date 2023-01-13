@@ -32,6 +32,7 @@
         /* Firefox */
         input[type=number] {
             -moz-appearance: textfield;
+            
         }
     </style>
 </head>
