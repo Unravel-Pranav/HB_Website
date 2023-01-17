@@ -9,40 +9,13 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
 
+
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Merienda:wght@400;700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/common.css">
     <style>
-        * {
-            font-family: 'Poppins', sans-serif;
-        }
-
-        .h-font {
-            font-family: 'Merienda', cursive;
-        }
-
-        /* Chrome, Safari, Edge, Opera */
-        input::-webkit-outer-spin-button,
-        input::-webkit-inner-spin-button {
-            -webkit-appearance: none;
-            margin: 0;
-        }
-
-        /* Firefox */
-        input[type=number] {
-            -moz-appearance: textfield;
-
-        }
-
-        .custom-bg {
-            background-color: #2ec1ac;
-        }
-
-        .custom-bg:hover {
-            background-color: #279e8c;
-        }
-
         .availability-form {
             margin-top: -50px;
             z-index: 2;
@@ -481,7 +454,7 @@
                         </div>
 
                     </div>
-                    
+
                 </div>
             </div>
         </div>
@@ -491,7 +464,43 @@
         </div>
     </div>
     </div>
+   
+    <!-- Facilities -->
+    <h2 class="mt-5 pt-5 mb-4 text-center fw-bold h-font">OUR FACILITIES</h2>
+    
+    <div class="container">
+        <div class="row justify-content-evenly px-lg-0 px-md-0 px-5">
+            <div class="col-lg-2 col-md-2 text-center bg-white rounded shadow py-4 my-3">
+                <img src="images/facilities/wifi.svg" width="80px">
+                <h5 class="mt-3">Wifi</h5>
 
+            </div>
+
+            <div class="col-lg-2 col-md-2 text-center bg-white rounded shadow py-4 my-3">
+                <img src="images/facilities/tv.svg" width="80px">
+                <h5 class="mt-3">TV</h5>
+
+            </div>
+
+            <div class="col-lg-2 col-md-2 text-center bg-white rounded shadow py-4 my-3">
+                <img src="images/facilities/massage.svg" width="80px">
+                <h5 class="mt-3">Massage</h5>
+
+            </div>
+
+            <div class="col-lg-2 col-md-2 text-center bg-white rounded shadow py-4 my-3">
+                <img src="images/facilities/firealarm.svg" width="80px">
+                <h5 class="mt-3">Fire Alarm</h5>
+
+            </div>
+
+            <div class="col-lg-2 col-md-2 text-center bg-white rounded shadow py-4 my-3">
+                <img src="images/facilities/ac.svg" width="80px">
+                <h5 class="mt-3">AC</h5>
+
+            </div>
+        </div>
+    </div>
 
 
     <br><br><br>
