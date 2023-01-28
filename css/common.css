@@ -34,10 +34,8 @@ input[type="number"] {
   border-color:var(--teal_hover);
 }
 
-.h-line
-{
+.h-line{
   width: 150px;
   margin: 0 auto;
   height: 1.7px;
-
 }
