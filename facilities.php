@@ -17,8 +17,6 @@
         }
     </style>
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
-
 </head>
 
 <body class="bg-light">
