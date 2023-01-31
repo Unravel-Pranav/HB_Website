@@ -11,13 +11,13 @@
                         <a class="nav-link active me-2" aria-current="page" href="index.php">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link  me-2" aria-current="page" href="#">Rooms</a>
+                        <a class="nav-link  me-2" aria-current="page" href="rooms.php">Rooms</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link me-2 " aria-current="page" href="facilities.php">Facilities</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link  me-2" aria-current="page" href="#">Contact us</a>
+                        <a class="nav-link  me-2" aria-current="page" href="contact.php">Contact us</a>
                     </li>
                     <li class="nav-item ">
                         <a class="nav-link " aria-current="page" href="about.php">About</a>
