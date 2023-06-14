@@ -1,6 +1,7 @@
 <?php
 require('inc/essentials.php');
 adminLogin();
+session_regenerate_id(true);
 
 ?>
 
