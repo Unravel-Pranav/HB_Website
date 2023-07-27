@@ -70,6 +70,8 @@ redirect('dashboard.php');
 
            $_SESSION['adminLogin']=true;
            $_SESSION['adminId']=$row['sr_no'];
+           $_SESSION['adminname']=$row['admin_name'];
+
            redirect('dashboard.php');
            
         } 
