@@ -429,38 +429,56 @@
         </div>
 
         <!-- Reach Us -->
+
+        <?php
+            $contact_q="SELECT * FROM `contact_details` WHERE `sr_no`=?";
+            $values = [1];
+            $contact_r = mysqli_fetch_assoc(select($contact_q,$values,'i'));
+            print_r($contact_r);
+
+        ?>
+
+
         <h2 class="mt-5 pt-5 mb-4 text-center fw-bold h-font">REACH US</h2>
         <div class="container">
             <div class="row">
 
                 <div class="col-lg-8 col-md-8 p-4 mb-lg-0 mb-4 bg-white rounded">
-                    <iframe class="w-100 rounded" height="320" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d230660.99610827616!2d81.6614976546118!3d25.40219738929359!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x398534c9b20bd49f%3A0xa2237856ad4041a!2sPrayagraj%2C%20Uttar%20Pradesh!5e0!3m2!1sen!2sin!4v1674065247902!5m2!1sen!2sin" loading="lazy"></iframe>
+                    <iframe class="w-100 rounded" height="320" src="<?php echo $contact_r['iframe'] ?>" loading="lazy"></iframe>
                 </div>
                 <div class="col-lg-4 col-md-4">
                     <div class="bg-white p-4 rounded mb-4">
                         <h5>Call Us</h5>
-                        <a href="tel:+918317208443" class="d-inline-block mb-2 text-decoration-none text-dark">
-                            <i class="bi bi-telephone-fill"></i> +918317208443</a>
+                        <a href="+<?php echo $contact_r['pn1'] ?>" class="d-inline-block mb-2 text-decoration-none text-dark">
+                            <i class="bi bi-telephone-fill"></i> +<?php echo $contact_r['pn1'] ?></a>
                         <br>
-                        <a href="tel:+918317208443" class="d-inline-block text-decoration-none text-dark">
-                            <i class="bi bi-telephone-fill"></i> +918317208443</a>
+                        <a href="+<?php echo $contact_r['pn2'] ?>" class="d-inline-block text-decoration-none text-dark">
+                            <i class="bi bi-telephone-fill"></i> +<?php echo $contact_r['pn2'] ?></a>
                     </div>
 
                     <div class="bg-white p-4 rounded mb-4">
                         <h5>Follow Us</h5>
-                        <a href="#" class="d-inline-block mb-3">
-                            <span class=" badge bg-light text-dark fs-6 p-2">
+                        <?php
+                        if($contact_r['tw']!='')
+                        {
+                            echo <<<data
+                            <a href="$contact_r[tw]" class="d-inline-block mb-3">
+                              <span class=" badge bg-light text-dark fs-6 p-2">
                                 <i class="bi bi-twitter me-1"></i> Twitter
-                            </span>
-                        </a>
-                        <br>
-                        <a href="#" class="d-inline-block mb-3">
+                              </span>
+                            </a>
+                            <br>
+                            data;
+
+                        }
+                        ?>
+                        <a href="<?php echo $contact_r['fb'] ?>" class="d-inline-block mb-3">
                             <span class=" badge bg-light text-dark fs-6 p-2">
                                 <i class="bi bi-facebook me-1"></i>Facebook
                             </span>
                         </a>
                         <br>
-                        <a href="#" class="d-inline-block">
+                        <a href="<?php echo $contact_r['insta'] ?>" class="d-inline-block">
                             <span class=" badge bg-light text-dark fs-6 p-2">
                                 <i class="bi bi-instagram me-1"></i> Instagram
                             </span>

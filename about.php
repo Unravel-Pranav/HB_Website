@@ -83,31 +83,19 @@
         <!-- Swiper -->
         <div class="swiper mySwiper">
             <div class="swiper-wrapper mb-5">
+            <?php
+                $about_r=selectAll('team_details');
+                $path=ABOUT_IMG_PATH;
+               while($row=mysqli_fetch_assoc($about_r)){
+                echo <<<data
                 <div class="swiper-slide bg-white text-center overflow-hidden rounded">
-                    <img src="images/about/team.jpg" class="w-100">
-                    <h5 class="mt-5">Random Name</h5>
+                   <img src="$path$row[picture]" class="w-100">
+                   <h5 class="mt-5">$row[name]</h5>
                 </div>
-                <div class="swiper-slide bg-white text-center overflow-hidden rounded">
-                    <img src="images/about/team.jpg" class="w-100">
-                    <h5 class="mt-5">Random Name</h5>
-                </div>
-                <div class="swiper-slide bg-white text-center overflow-hidden rounded">
-                    <img src="images/about/team.jpg" class="w-100">
-                    <h5 class="mt-5">Random Name</h5>
-                </div>
-                <div class="swiper-slide bg-white text-center overflow-hidden rounded">
-                    <img src="images/about/team.jpg" class="w-100">
-                    <h5 class="mt-5">Random Name</h5>
-                </div>
-                <div class="swiper-slide bg-white text-center overflow-hidden rounded">
-                    <img src="images/about/team.jpg" class="w-100">
-                    <h5 class="mt-5">Random Name</h5>
-                </div>
-                <div class="swiper-slide bg-white text-center overflow-hidden rounded">
-                    <img src="images/about/team.jpg" class="w-100">
-                    <h5 class="mt-5">Random Name</h5>
-                </div>
-                
+                data;
+               }
+             ?>
+
             </div>
             <div class="swiper-pagination"></div>
         </div>
