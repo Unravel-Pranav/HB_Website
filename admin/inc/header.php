@@ -15,13 +15,13 @@
                     <ul class="nav nav-pills flex-column">
 
                         <li class="nav-item">
-                            <a class="nav-link text-light" href="#">Dashboard</a>
+                            <a class="nav-link text-light" href="dashboard.php">Dashboard</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-light" href="#">Rooms</a>
+                            <a class="nav-link text-light" href="rooms.php">Rooms</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-light" href="#">Users</a>
+                            <a class="nav-link text-light" href="users.php">Users</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-light" href="settings.php">Settings</a>

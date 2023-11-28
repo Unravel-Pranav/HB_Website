@@ -25,6 +25,11 @@
             }
 
         }
+        body, html {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
     </style>
 </head>
 
@@ -424,19 +429,11 @@
             </div>
             <div class="col-lg-12 text-center mt-5">
                 <a href="#" class="btn btn-sm btn-outline-dark rounded-0 fw-bold shadow-none">Know More>>></a>
-
             </div>
         </div>
+    </div>
 
         <!-- Reach Us -->
-
-        <?php
-            $contact_q="SELECT * FROM `contact_details` WHERE `sr_no`=?";
-            $values = [1];
-            $contact_r = mysqli_fetch_assoc(select($contact_q,$values,'i'));
-            print_r($contact_r);
-
-        ?>
 
 
         <h2 class="mt-5 pt-5 mb-4 text-center fw-bold h-font">REACH US</h2>
