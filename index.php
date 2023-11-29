@@ -25,11 +25,13 @@
             }
 
         }
-        body, html {
-    margin: 0;
-    padding: 0;
-    overflow-x: hidden;
-}
+
+        body,
+        html {
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
     </style>
 </head>
 
@@ -39,41 +41,30 @@
     <!-- Carousel -->
     <div class="container-fluid px-lg-4 mt-4">
         <!-- Swiper -->
+
         <div class="swiper swiper-container">
             <div class="swiper-wrapper">
-                <div class="swiper-slide">
-                    <img src="images/carousel/1.png" class="w-100 d-block" />
-                </div>
-                <div class="swiper-slide">
-                    <img src="images/carousel/2.png" class="w-100 d-block" />
-                </div>
-                <div class="swiper-slide">
-                    <img src="images/carousel/3.png" class="w-100 d-block" />
-                </div>
-                <div class="swiper-slide">
-                    <img src="images/carousel/4.png" class="w-100 d-block" />
-                </div>
-                <div class="swiper-slide">
-                    <img src="images/carousel/5.png" class="w-100 d-block" />
-                </div>
-                <div class="swiper-slide">
-                    <img src="images/carousel/6.png" class="w-100 d-block" />
-                </div>
+
+            <?php
+            $res = selectAll('carousel');
+            while ($row = mysqli_fetch_assoc($res)) {
+                $path = CAROUSEL_IMG_PATH;
+                echo <<<data
+                    <div class="swiper-slide">
+                        <img src="$path$row[image]" class="w-100 d-block">
+                    </div>
+                data;
+            }
+            ?>
             </div>
-
         </div>
-
-    </div>
-
-    <div class="container-fluid px-lg-4 mt-4">
-
     </div>
 
     <!-- Check availability form -->
 
     <div class="container availability-form ">
         <div class="row">
-            <div class="col-lg-12 bg-white shadow-none p-4 rounded">
+            <div class="col-lg-12 bg-white shadow p-4 rounded">
                 <h5 class="mb-4">Check Booking Availability</h5>
                 <form>
                     <div class="row align-items-end">
@@ -433,32 +424,31 @@
         </div>
     </div>
 
-        <!-- Reach Us -->
+    <!-- Reach Us -->
 
 
-        <h2 class="mt-5 pt-5 mb-4 text-center fw-bold h-font">REACH US</h2>
-        <div class="container">
-            <div class="row">
+    <h2 class="mt-5 pt-5 mb-4 text-center fw-bold h-font">REACH US</h2>
+    <div class="container">
+        <div class="row">
 
-                <div class="col-lg-8 col-md-8 p-4 mb-lg-0 mb-4 bg-white rounded">
-                    <iframe class="w-100 rounded" height="320" src="<?php echo $contact_r['iframe'] ?>" loading="lazy"></iframe>
+            <div class="col-lg-8 col-md-8 p-4 mb-lg-0 mb-4 bg-white rounded">
+                <iframe class="w-100 rounded" height="320" src="<?php echo $contact_r['iframe'] ?>" loading="lazy"></iframe>
+            </div>
+            <div class="col-lg-4 col-md-4">
+                <div class="bg-white p-4 rounded mb-4">
+                    <h5>Call Us</h5>
+                    <a href="+<?php echo $contact_r['pn1'] ?>" class="d-inline-block mb-2 text-decoration-none text-dark">
+                        <i class="bi bi-telephone-fill"></i> +<?php echo $contact_r['pn1'] ?></a>
+                    <br>
+                    <a href="+<?php echo $contact_r['pn2'] ?>" class="d-inline-block text-decoration-none text-dark">
+                        <i class="bi bi-telephone-fill"></i> +<?php echo $contact_r['pn2'] ?></a>
                 </div>
-                <div class="col-lg-4 col-md-4">
-                    <div class="bg-white p-4 rounded mb-4">
-                        <h5>Call Us</h5>
-                        <a href="+<?php echo $contact_r['pn1'] ?>" class="d-inline-block mb-2 text-decoration-none text-dark">
-                            <i class="bi bi-telephone-fill"></i> +<?php echo $contact_r['pn1'] ?></a>
-                        <br>
-                        <a href="+<?php echo $contact_r['pn2'] ?>" class="d-inline-block text-decoration-none text-dark">
-                            <i class="bi bi-telephone-fill"></i> +<?php echo $contact_r['pn2'] ?></a>
-                    </div>
 
-                    <div class="bg-white p-4 rounded mb-4">
-                        <h5>Follow Us</h5>
-                        <?php
-                        if($contact_r['tw']!='')
-                        {
-                            echo <<<data
+                <div class="bg-white p-4 rounded mb-4">
+                    <h5>Follow Us</h5>
+                    <?php
+                    if ($contact_r['tw'] != '') {
+                        echo <<<data
                             <a href="$contact_r[tw]" class="d-inline-block mb-3">
                               <span class=" badge bg-light text-dark fs-6 p-2">
                                 <i class="bi bi-twitter me-1"></i> Twitter
@@ -466,77 +456,76 @@
                             </a>
                             <br>
                             data;
+                    }
+                    ?>
+                    <a href="<?php echo $contact_r['fb'] ?>" class="d-inline-block mb-3">
+                        <span class=" badge bg-light text-dark fs-6 p-2">
+                            <i class="bi bi-facebook me-1"></i>Facebook
+                        </span>
+                    </a>
+                    <br>
+                    <a href="<?php echo $contact_r['insta'] ?>" class="d-inline-block">
+                        <span class=" badge bg-light text-dark fs-6 p-2">
+                            <i class="bi bi-instagram me-1"></i> Instagram
+                        </span>
+                    </a>
 
-                        }
-                        ?>
-                        <a href="<?php echo $contact_r['fb'] ?>" class="d-inline-block mb-3">
-                            <span class=" badge bg-light text-dark fs-6 p-2">
-                                <i class="bi bi-facebook me-1"></i>Facebook
-                            </span>
-                        </a>
-                        <br>
-                        <a href="<?php echo $contact_r['insta'] ?>" class="d-inline-block">
-                            <span class=" badge bg-light text-dark fs-6 p-2">
-                                <i class="bi bi-instagram me-1"></i> Instagram
-                            </span>
-                        </a>
-
-                    </div>
                 </div>
             </div>
         </div>
+    </div>
 
-        <!-- Footer -->
+    <!-- Footer -->
 
-        <?php require('inc/footer.php'); ?>
+    <?php require('inc/footer.php'); ?>
 
-        <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
-        <!-- Initialize Swiper -->
-        <script>
-            var swiper = new Swiper(".swiper-container", {
-                spaceBetween: 30,
-                effect: "fade",
-                loop: true,
-                autoplay: {
-                    delay: 3400,
-                    disableOnInteraction: false,
-                }
-            });
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+    <!-- Initialize Swiper -->
+    <script>
+        var swiper = new Swiper(".swiper-container", {
+            spaceBetween: 30,
+            effect: "fade",
+            loop: true,
+            autoplay: {
+                delay: 3400,
+                disableOnInteraction: false,
+            }
+        });
 
-            var swiper = new Swiper(".swiper-testimonials", {
-                effect: "coverflow",
-                grabCursor: true,
-                centeredSlides: true,
-                loop: true,
-                slidesPerView: "auto",
-                slidesPerView: "3",
-                coverflowEffect: {
-                    rotate: 50,
-                    stretch: 0,
-                    depth: 100,
-                    modifier: 1,
-                    slideShadows: false,
+        var swiper = new Swiper(".swiper-testimonials", {
+            effect: "coverflow",
+            grabCursor: true,
+            centeredSlides: true,
+            loop: true,
+            slidesPerView: "auto",
+            slidesPerView: "3",
+            coverflowEffect: {
+                rotate: 50,
+                stretch: 0,
+                depth: 100,
+                modifier: 1,
+                slideShadows: false,
+            },
+            pagination: {
+                el: ".swiper-pagination",
+            },
+            breakpoints: {
+                320: {
+                    slidesPerView: 1,
                 },
-                pagination: {
-                    el: ".swiper-pagination",
+                640: {
+                    slidesPerView: 1,
                 },
-                breakpoints: {
-                    320: {
-                        slidesPerView: 1,
-                    },
-                    640: {
-                        slidesPerView: 1,
-                    },
-                    768: {
-                        slidesPerView: 2,
-                    },
-                    1024: {
-                        slidesPerView: 3,
-                    },
+                768: {
+                    slidesPerView: 2,
+                },
+                1024: {
+                    slidesPerView: 3,
+                },
 
-                }
-            });
-        </script>
+            }
+        });
+    </script>
 </body>
 
 </html>
